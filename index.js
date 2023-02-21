@@ -18,7 +18,14 @@ Aşağıdakileri yapın:
    2. Eğer yaş 18'den büyük ise Console'da true, değilse false değeri yazdırın.
 
    İPUCU: fonksiyon oluşturmaya gerek yok
-*/
+*/ 
+var surucuYasi = 24;
+if (surucuYasi>=18) {
+  console.log(true);
+}
+else {
+  console.log(false);
+}
 
 
 
@@ -33,7 +40,14 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
+let kilo1= 55 ;
+let kilo2= 10 ;
+if (kilo1>kilo2) {
+  console.log(true);
+}
+else {
+  console.log(false);
+}
 
 
 
@@ -61,9 +75,10 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamlayın:
    3. console.log(carpma(7,4)) ile yazdığınız fonsiyonu test edin. Console'da sonucu 28 olarak görmelisiniz.
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function carpma(a,b){
+  return a*b ; 
 }
+console.log(carpma(3,4));
 
 
 
@@ -77,7 +92,8 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
+function kopeginYasi(b){
+  return b*7;
   /*buraya kodunu yazabilirsin*/
 }
 
