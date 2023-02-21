@@ -62,6 +62,11 @@ Aşağıdakileri yapın:
 
    İPUCU: Number metoduna bakabilirsin
 */
+const stringSayi = 1999;
+const numberSayi = Number(stringSayi);
+console.log(numberSayi);
+
+
 
 
 
@@ -78,7 +83,7 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamlayın:
 function carpma(a,b){
   return a*b ; 
 }
-console.log(carpma(3,4));
+console.log(carpma(7,4));
 
 
 
@@ -92,10 +97,13 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(b){
-  return b*7;
-  /*buraya kodunu yazabilirsin*/
-}
+ function kopeginYasi(yas){
+  yas=yas*7;
+  
+console.log('kopeginYasi',yas);
+return yas;}
+kopeginYasi(5);
+
 
 
 
@@ -114,8 +122,30 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+  switch (oyuncu) {
+    case "Taş":
+      return bilgisayar === "Makas"
+        ? "Kazandın!"
+        : bilgisayar === "Kağıt"
+        ? "Kaybettin!"
+        : "Beraberlik";
+
+    case "Kağıt":
+      return bilgisayar === "Makas"
+        ? "Kaybettin!"
+        : bilgisayar === "Kağıt"
+        ? "Beraberlik"
+        : "Kazandın!";
+
+    case "Makas":
+      return bilgisayar === "Makas"
+        ? "Beraberlik"
+        : bilgisayar === "Kağıt"
+        ? "Kazandın!"
+        : "Kaybettin!";
+  }
 }
+
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
@@ -132,6 +162,18 @@ function oyun(oyuncu, bilgisayar){
 Şimdi kendi seçtiğiniz bir seçime karşı bilgisayarın rastgele oluşturduğu seçimi yukarıda yazdığınız oyun fonsiyonu ile oynayın ve sonucu console'a yazdırın.
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */
+function bilgisayarinSecimi() {
+  let emineRandomSayisi = Math.random() * 3;
+  if (emineRandomSayisi < 1) {
+    return "Taş";
+  } else if (emineRandomSayisi < 2) {
+    return "Makas";
+  } else {
+    return "Kağıt";
+  }
+}
+
+console.log(oyun("Kağıt", bilgisayarinSecimi()));
 
 /* Görev 4 : Metrik Dönüştürücü */
 
@@ -143,8 +185,14 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamlayın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(Kilometre){
+{
+  
+    Kilometre=Kilometre * 0.621371;
+    
+  console.log('mil = ',Kilometre);
+  return Kilometre;}
+  milDonusturucu(100);
 }
 
 
@@ -159,9 +207,14 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 Google'da arama ipucu: "feet cm dönüştürme"
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
-}
+function feetDonusturucu(cm){
+  
+    cm=cm/30.48;
+    
+  console.log('feet = ',cm);
+  return cm;}
+  feetDonusturucu(10);
+
 
 
 
@@ -177,10 +230,13 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 3. Bu fonksiyonun dışında bir yerde, maymun sayısının her seferinde 1 azaldığı ve maymun sayısı 1 olana kadar devem eden bir döngü oluşturun. 
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
-
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
-}
+function cocukSarkisi(b) {
+  for (let i=5; i>0; i--) {
+    console.log(i + "Küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!:");
+  }
+return b;
+} 
+cocukSarkisi(5);
 
 
 /* Görev 6 : Not Hesaplayıcı */
@@ -198,9 +254,23 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
-}
+function notHesapla(puan){
+
+  if(puan>=90 && puan<=100) {
+    console.log("A aldın"); 
+    }
+    else if(puan>=80 && puan<=90) {
+      console.log("B aldın");
+    }
+    else if(puan>=70 && puan<=80) {
+     console.log("C aldın");
+    }
+    else if(puan>=60 && puan<=70) {
+      console.log("D aldın");
+    }
+    else { console.log("F aldın"); } }
+      notHesapla(60);
+
 
 
 
